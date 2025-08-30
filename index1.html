@@ -26,43 +26,74 @@ button {
   padding: 10px 15px;
   font-size: 16px;
   cursor: pointer;
-  cursor: zoom-in;
+  
 }
 </style>
 </head>
 <body>
   <div class="container">
-    <h1>Counter: <span id="count">0</span></h1>
-    <button id="increase">Increase</button>
-    <button id="decrease">Decrease</button>
+    <h1>Num1:<span id="count1">0</span></h1>
+    <button id="increase1">Increase</button>
+    <button id="decrease1">Decrease</button>
+    <h1>Num2:<span id="count2">0</span></h1>
+    <button id="increase2">Increase</button>
+    <button id="decrease2">Decrease</button>
+    <h1>Sum :<span id="sum">0</span></h1>
+    <button id="add">ADD</button>
     <button id="reset">Reset</button>
   </div>
 
   <script >
     // Select elements from DOM
-const countEl = document.getElementById("count");
-const increaseBtn = document.getElementById("increase");
-const decreaseBtn = document.getElementById("decrease");
+const countE1 = document.getElementById("count1");
+const increaseBtn1 = document.getElementById("increase1");
+const decreaseBtn1 = document.getElementById("decrease1");
+const countE2 = document.getElementById("count2");
+const increaseBtn2 = document.getElementById("increase2");
+const decreaseBtn2 = document.getElementById("decrease2");
+const addBtn = document.getElementById("add");
+const sumall = document.getElementById("sum");
 const resetBtn = document.getElementById("reset");
 
-let count = 0;
+let count1 = 0;
+let count2 = 0;
 
-// Increase button
-increaseBtn.addEventListener("click", function() {
-  count++;
-  countEl.textContent = count;
+// Increase button1
+increaseBtn1.addEventListener("click", function() {
+  count1++;
+  countE1.textContent = count1;
 });
 
-// Decrease button
-decreaseBtn.addEventListener("click", function() {
-  count--;
-  countEl.textContent = count;
+// Decrease button1
+decreaseBtn1.addEventListener("click", function() {
+  count1--;
+  countE1.textContent = count1;
 });
+
+// Increase button2
+increaseBtn2.addEventListener("click", function() {
+  count2++;
+  countE2.textContent = count2;
+});
+
+// Decrease button2
+decreaseBtn2.addEventListener("click", function() {
+  count2--;
+  countE2.textContent = count2;
+});
+// Add button
+addBtn.addEventListener("click", function(){
+    const sum = count1 + count2;
+    sumall.textContent = sum;
+})
 
 // Reset button
 resetBtn.addEventListener("click", function() {
-  count = 0;
-  countEl.textContent = count;
+  count1 = 0;
+  count2 = 0;
+  sumall.textContent = "0";
+  countE1.textContent = count1;
+  countE2.textContent = count2;
 });
 
   </script>
